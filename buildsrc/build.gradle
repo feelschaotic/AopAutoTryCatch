@@ -1,0 +1,13 @@
+apply plugin: 'groovy'
+
+repositories {
+    jcenter()
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.tools.build:gradle:2.3.3'
+    compile 'org.javassist:javassist:3.20.0-GA'
+}
+
