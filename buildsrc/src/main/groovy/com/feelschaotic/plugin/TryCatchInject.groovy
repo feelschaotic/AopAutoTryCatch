@@ -52,7 +52,7 @@ class TryCatchInject {
     }
 
     private static boolean isClassFile(String filePath) {
-        return filePath.endsWith(".class") && !filePath.contains('R') && !filePath.contains('R.class') && !filePath.contains("BuildConfig.class")
+        return filePath.endsWith(".class") && !filePath.contains('R$') && !filePath.contains('R.class') && !filePath.contains("BuildConfig.class")
     }
 
     private static void transformPathAndInjectCode(String filePath, int index) {
