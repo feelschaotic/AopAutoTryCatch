@@ -42,7 +42,7 @@ class TryCatchInject {
 
             String filePath = file.absolutePath
             if (isClassFile(filePath)) {
-                int index = filePath.indexOf(packageName.replace(".", File.separator))
+                int index = filePath.indexOf(packageName.replace(".", File.separator).replace("/", File.separator).replace("\\", File.separator))
                 boolean isClassFilePath = index != -1
                 if (isClassFilePath) {
                     transformPathAndInjectCode(filePath, index)
