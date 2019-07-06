@@ -1,14 +1,20 @@
 # AopAutoTryCatch
 
 Use Javassist, a custom Gradle plug to implement automatic try-catch
-AOP思想取代防范性try-catch
 
-## 技术点
+用 Javassist 实现 AOP 思想，达到一个注解即可自动加 try-catch 的目的，当然，AOP 的应用场景还有很多很多，这里抛砖引玉，希望给大家一些参考。
+
+## 一、通过本项目你能学到什么技术点？
+
 - Javassist
 - 自定义Gradle插件
 - Transform
 
-## 使用方法
+## 二、如何使用
+
+使用注解 `@AutoTryCatch`来捕获异常
+
+1. 支持 catch 所有异常
 ```
   /**
      * 无崩溃，会catch所有Exception
@@ -17,7 +23,11 @@ AOP思想取代防范性try-catch
     public void catchAllException() {
         int i = 1 / 0;
     }
+```
 
+2. 支持 catch 指定异常
+
+```
     /**
      * 此处崩溃，因为只会catch指定的NullPointerException
      */
@@ -36,4 +46,4 @@ AOP思想取代防范性try-catch
         size = 1 / 0;
     }
 ```
-> 详细介绍：[一文应用 AOP | 最全选型考量 + 边剖析经典开源库边实践，美滋滋](https://www.jianshu.com/p/42ce95450adb)
+> 详细介绍见我的博文：[一文应用 AOP | 最全选型考量 + 边剖析经典开源库边实践，美滋滋](https://www.jianshu.com/p/42ce95450adb)
